@@ -1,5 +1,5 @@
 .container {
-    margin-top: 100px;
+    margin-top: 70px;
     
 }
 
@@ -10,9 +10,12 @@ form {
 }
 
 .top-form {
-    background: red;
+    
+    padding: 5px;
     color: white;
     text-align: center;
+   
+
 }
 
 body {

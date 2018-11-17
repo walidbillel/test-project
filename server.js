@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var helmet = require("helmet");
-
+var morgan = require("morgan");
 var db = require('./models')
 var app = express();
 var PORT = process.env.PORT || 3030;
@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(helmet());
-
+app.use(morgan('dev'));
 
 // Static directory
 app.use(express.static("public"));

@@ -16,6 +16,7 @@ $("#get-pass").on("click", function(){
         } else {
             $(".alert-message").html(`Your Password is ${data.password}`);
             $("#alert-modal").modal("toggle");
+           
         }
        
     });
