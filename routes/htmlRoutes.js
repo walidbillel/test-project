@@ -9,4 +9,8 @@ module.exports = function (app) {
     app.get("/register", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/pages/register.html"));
     });
+
+    app.get("/password", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/pages/password.html"));
+    });
 }

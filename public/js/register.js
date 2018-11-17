@@ -13,8 +13,8 @@ $("#submit-button").on("click", function(){
     } else {
 
         var userobject = {
-            realname: realName,
-            username: userName,
+            realName: realName,
+            Username: userName,
             email: email,
             password: pass,
             passCon: confPass 
