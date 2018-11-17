@@ -3,6 +3,12 @@
 
 $("#submit-button").on("click", function () {
     event.preventDefault();
+
+    // $(".input-animate").addClass("animated jackInTheBox").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+    //     $(this).removeClass("animated jackInTheBox");
+    //   });
+
+
     var userName = $("#username-val").val().trim();
     var realName = $("#realname-val").val().trim();
     var email = $("#email-val").val().trim();
@@ -11,9 +17,11 @@ $("#submit-button").on("click", function () {
 
    
     if (!userName || !realName || !email || !pass || !confPass) {
-        alert("please fill in all inputs");
+        $(".alert-message").html("Please Fill in all Inputs!");
+        $("#alert-modal").modal("toggle");
     } else if (!(pass === confPass)) {
-        alert("passwords don't match")
+        $(".alert-message").html("Passwords Don't Match!");
+        $("#alert-modal").modal("toggle");
     } else {
 
         var userobject = {
