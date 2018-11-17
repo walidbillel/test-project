@@ -1,4 +1,7 @@
-$("#submit-button").on("click", function(){
+
+
+
+$("#submit-button").on("click", function () {
     event.preventDefault();
     var userName = $("#username-val").val().trim();
     var realName = $("#realname-val").val().trim();
@@ -6,7 +9,8 @@ $("#submit-button").on("click", function(){
     var pass = $("#password-val").val().trim();
     var confPass = $("#conf-password-val").val().trim();
 
-    if(!userName || !realName || !email || !pass || !confPass) {
+   
+    if (!userName || !realName || !email || !pass || !confPass) {
         alert("please fill in all inputs");
     } else if (!(pass === confPass)) {
         alert("passwords don't match")
@@ -17,26 +21,26 @@ $("#submit-button").on("click", function(){
             Username: userName,
             email: email,
             password: pass,
-            passCon: confPass 
+            passCon: confPass
         }
 
         console.log(userobject);
         upsertUserToDatabase(userobject)
     }
-    
+
 });
 
 function upsertUserToDatabase(newUser) {
 
-    $.post("/api/users", newUser).then(function(res, err){
+    $.post("/api/users", newUser).then(function (res, err) {
         console.log(err)
         console.log(res)
         if (res.name == "SequelizeUniqueConstraintError") {
-          // alert("That username or email is already in user");
-        alert("username or email already taken")
+            // alert("That username or email is already in user");
+            alert("username or email already taken")
         }
         else {
-          window.location.href = "/"
+            window.location.href = "/"
         }
     });
 }
