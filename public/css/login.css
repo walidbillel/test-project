@@ -44,7 +44,7 @@ body {
   
   .modal-content {
     position:fixed;
-    background-image: linear-gradient(rgb(243, 237, 237), rgb(17, 123, 223));
+    background-image: linear-gradient(rgb(241, 126, 126), rgb(255, 255, 255));
     width: auto;
     padding: 60px;
     height: auto;

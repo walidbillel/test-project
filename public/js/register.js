@@ -1,6 +1,5 @@
 
 
-
 $("#submit-button").on("click", function () {
     event.preventDefault();
 
@@ -9,13 +8,14 @@ $("#submit-button").on("click", function () {
     //   });
 
 
+
     var userName = $("#username-val").val().trim();
     var realName = $("#realname-val").val().trim();
     var email = $("#email-val").val().trim();
     var pass = $("#password-val").val().trim();
     var confPass = $("#conf-password-val").val().trim();
 
-   
+
     if (!userName || !realName || !email || !pass || !confPass) {
         $(".alert-message").html("Please Fill in all Inputs!");
         $("#alert-modal").modal("toggle");
@@ -45,7 +45,8 @@ function upsertUserToDatabase(newUser) {
         console.log(res)
         if (res.name == "SequelizeUniqueConstraintError") {
             // alert("That username or email is already in user");
-            alert("username or email already taken")
+            $(".alert-message").html("Username or Email Already Taken!");
+            $("#alert-modal").modal("toggle");
         }
         else {
             window.location.href = "/"
