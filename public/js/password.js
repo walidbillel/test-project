@@ -14,7 +14,7 @@ $("#get-pass").on("click", function(){
             $(".alert-message").html("Name or Email Not Valid! Try Again");
             $("#alert-modal").modal("toggle");
         } else {
-            $(".alert-message").html(`Your Password is ${data.password}`);
+            $(".alert-message").html(`Your Password is <b>${data.password}</b>`);
             $("#alert-modal").modal("toggle");
            
         }

@@ -13,4 +13,8 @@ module.exports = function (app) {
     app.get("/password", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/pages/password.html"));
     });
+
+    app.get("/main", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/pages/main.html"));
+    });
 }

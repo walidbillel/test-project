@@ -16,10 +16,10 @@ $("#login-button").on("click", function(){
         if(!data) {
             $(".alert-message").html("User Doesn't Exist! Try Again");
             $("#alert-modal").modal("toggle");
-
         }
 
         localStorage.setItem("user", data.id);
+        window.location.href = "/main"
         console.log(localStorage);
     })
 });
