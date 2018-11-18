@@ -19,7 +19,7 @@ $("#login-button").on("click", function(){
         }
 
         localStorage.setItem("user", data.id);
-        window.location.href = "/main"
+        window.location.href = "/main";
         console.log(localStorage);
     })
 });
