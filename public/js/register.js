@@ -1,4 +1,4 @@
-
+var upload = new FileUploadWithPreview('myUniqueUploadId');
 
 $("#submit-button").on("click", function () {
     event.preventDefault();
