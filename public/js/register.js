@@ -27,12 +27,13 @@ $("#submit-button").on("click", function () {
         var userobject = {
             realName: realName,
             Username: userName,
+            image: upload.cachedFileArray[0].name,
             email: email,
             password: pass,
             passCon: confPass
         }
 
-        console.log(userobject);
+        // console.log(userobject);
         upsertUserToDatabase(userobject)
     }
 
@@ -41,15 +42,17 @@ $("#submit-button").on("click", function () {
 function upsertUserToDatabase(newUser) {
 
     $.post("/api/users", newUser).then(function (res, err) {
-        console.log(err)
-        console.log(res)
+        // console.log(err)
+        // console.log(res)
         if (res.name == "SequelizeUniqueConstraintError") {
             // alert("That username or email is already in user");
             $(".alert-message").html("Username or Email Already Taken!");
             $("#alert-modal").modal("toggle");
         }
         else {
-            window.location.href = "/"
+            // window.location.href = "/"
+            console.log(newUser);
+            // console.log(upload)
         }
     });
 }
